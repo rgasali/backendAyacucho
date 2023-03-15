@@ -1,0 +1,116 @@
+body{
+    
+    margin: 0;
+    box-sizing: content-box;
+    overflow-x: hidden;
+    background-color: rgb(198, 217, 255);
+    background-image:url(../imagenes/chrysanthemum-ga076ec3be_1920.jpg) ;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    
+}
+header{
+    width: 100vw;
+    height: 15vh;
+    align-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    background-color: azure;
+    font-family: monospace;
+    position: sticky;
+    top: 0;
+   
+}
+h1{
+    color: rgb(4, 9, 69);
+}
+
+nav{
+    flex-direction: column;
+    width: 30vw;
+    height: 50vh;
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+    position: sticky;
+    top: 15vh;
+    
+}
+
+nav button{
+    font-size: 1.5rem;
+    background-color:transparent ;
+    flex-wrap:nowrap;
+    height: 10vh;
+    width: 30vw;
+    color: white;
+    background-color: rgba(100, 30, 165, 0.517);
+    transition: 0.3s;
+    border-radius:  30px;
+}
+
+nav button:hover{
+    
+   /*  height: 12vh; */
+    background-color:  rgb(44, 5, 153);
+}
+main{
+    margin-top: -40vh;
+    color: rgb(255, 255, 255);
+    display: inline;
+}
+main>h2,
+main>h3,
+main>p{
+    margin-left: 35vw;
+    margin-bottom: 10vh;
+}
+
+main>h2{
+font-family: 'Courier New', Courier, monospace;
+font-weight: 900;
+font-size: 3.5rem;
+}
+
+article{
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 35vw;
+    margin-bottom: 5vh;
+    padding-bottom: 5vh;
+    padding: 5vh;
+    background-color:rgba(45, 5, 153, 0.459);
+    border-radius: 30px;
+}
+article img{
+    height: 30vh;
+    width: auto;
+    border-radius: 5%;
+    margin: 5vh;
+}
+article p{
+    border: solid aliceblue 1px;
+    border-top: transparent;
+    border-right: transparent;
+    border-bottom: transparent;
+    padding-left: 2vw;
+}
+
+.pilares{
+    width: 70vw;
+    height: auto;
+    background-color: rgba(21, 191, 253, 0.5);
+    border-radius: 5%;
+    margin: auto;
+    margin-top: 30vh;
+    padding: 5vw;
+   
+}
