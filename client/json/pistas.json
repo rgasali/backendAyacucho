@@ -1,0 +1,82 @@
+{"tracks": [{
+    "identificador":1,
+    "cancion":"imagine",
+    "duracion":507,
+    "interprete":"Jhon Lennon",
+    "genero":"lento",
+    "fecha":1971
+},
+{
+    "identificador":2,
+    "cancion":"Johnny B. Goode",
+    "duracion":402,
+    "interprete":"Chuck Berry",
+    "genero":"rock",
+    "fecha":1958
+},
+{
+    "identificador":3,
+    "cancion":"Billie Jean",
+    "duracion":442,
+    "interprete":"Michael Jackson",
+    "genero":"pop",
+    "fecha":1983
+},
+{
+    "identificador":4,
+    "cancion":"Welcome to the Jungle",
+    "duracion":606,
+    "interprete":"Guns n roses",
+    "genero":"rock",
+    "fecha":1987
+},
+{
+    "identificador":5,
+    "cancion":"No Woman, No Cry",
+    "duracion":421,
+    "interprete":"Bob Marley",
+    "genero":"reggae",
+    "fecha":1974
+},
+{
+    "identificador":6,
+    "cancion":"Bohemian Rhapsody",
+    "duracion":719,
+    "interprete":"Queen",
+    "genero":"rock",
+    "fecha":1975
+},
+{
+    "identificador":7,
+    "cancion":"I want to breack free",
+    "duracion":449,
+    "interprete":"Queen",
+    "genero":"lento",
+    "fecha":1984
+},
+{
+    "identificador":8,
+    "cancion":"levels",
+    "duracion":301,
+    "interprete":"Avicii",
+    "genero":"electronica",
+    "fecha":2011
+},
+{
+    "identificador":9,
+    "cancion":"this is what a feels like",
+    "duracion":342,
+    "interprete":"Armin Van Buuren",
+    "genero":"electronica",
+    "fecha":2012
+},
+{
+    "identificador":10,
+    "cancion":"quedate ",
+    "duracion":421,
+    "interprete":"Quevedo",
+    "genero":"pop rap",
+    "fecha":2022
+}
+]
+}
