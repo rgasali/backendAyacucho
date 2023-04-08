@@ -1,0 +1,5 @@
+karen@gmail.com,Karen,Simari,100
+victor@gmail.com,Victor,Gonzalez,100
+vivi@gmail.com,Viviana,Blasco,500
+mati@gmail.com,Matias,Villalobo,300
+ale@gmail.com,Alejandro,Santini,500
