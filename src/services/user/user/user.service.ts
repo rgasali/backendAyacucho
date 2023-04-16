@@ -6,11 +6,11 @@ import * as fs from 'fs';
 export class UserService {
   getUsuarios(url: string): Usuario[] {
     const usuarios = [];
-    let datos = fs.readFileSync(url, 'utf-8');
-    let renglon = datos.split('\r\n');
-    for (let linea of renglon) {
-      let partes = linea.split(',');
-      let usuario = new Usuario(
+    const datos = fs.readFileSync(url, 'utf-8');
+    const renglon = datos.split('\r\n');
+    for (const linea of renglon) {
+      const partes = linea.split(',');
+      const usuario = new Usuario(
         partes[0],
         partes[1],
         partes[2],
