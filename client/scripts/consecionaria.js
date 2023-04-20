@@ -24,14 +24,14 @@ const mostrarVehiculos = () => {
 
 
 async function load() {
-  const url_base = "http://localhost:3000/consecionaria.html";
+  const url_base = "http://localhost:3000";///consecionaria.html
   const endpoint = "/vehiculos";
 
   const respuesta = await fetch(url_base + endpoint);
   vehiculos = await respuesta.json();
   console.log(vehiculos);
 
-  mostrarvehiculos()
+  mostrarVehiculos()
 }
 
 const agregar = async () => {
@@ -41,23 +41,23 @@ const agregar = async () => {
   let modelo = document.getElementById('modelo').value;
   let anio = document.getElementById('anio').value;
   let precio = document.getElementById('precio').value;
-  let carga = document.getElementById('carga').value;
+  
 
   let vehiculo = {
     "tipo": tipo,
     "marca": marca,
     "patente": patente,
     "modelo": modelo,
-    "anio": anio,
-    "precio": precio,
-    "carga": carga
+    "anio": Number(anio),
+    "precio":Number(precio),
+    
 
 
 
   }
   if (aServidor(vehiculo)) {
     vehiculos.push(vehiculo);
-    mostrarvehiculos();
+    mostrarVehiculos();
   }
 }
 

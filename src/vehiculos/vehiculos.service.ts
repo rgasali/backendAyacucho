@@ -6,7 +6,7 @@ import { CreateVehiculoDto } from './vehiculos.dto';
 
 @Injectable()
 export class VehiculosService {
-    private camionetas:Camioneta[] =[];
+    //private camionetas:Camioneta[] =[];
     private autos:Auto[]=[];
     private url:string= './src/vehiculos/vehiculos.txt'
 
@@ -25,7 +25,7 @@ export class VehiculosService {
                 partes[2],
                 partes[3],
                 parseInt(partes[4]),
-                parseInt(partes[5])
+                parseInt(partes[5]),
               );
       
               this.autos.push(auto);
