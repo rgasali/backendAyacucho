@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import * as fs from "fs";
 import { Auto } from 'src/clases/auto';
 import { Camioneta } from 'src/clases/camioneta';
@@ -25,9 +25,9 @@ export class VehiculosService {
                 partes[2],
                 partes[3],
                 parseInt(partes[4]),
-                parseInt(partes[5]),
+                parseInt(partes[5])
               );
-      
+                console.log(auto)
               this.autos.push(auto);
             }
           }
@@ -36,6 +36,17 @@ export class VehiculosService {
        
     getAutos():Auto[]{
         return this.autos;
+    }
+
+    getVehiculoByPatente(patente: string): Auto {
+      const auto = this.autos.find((auto) => auto.patente === patente);
+  
+      if (!auto) {
+        // devolver una exception si no encuentra la pista
+        throw new NotFoundException();
+      }
+  
+      return auto;
     }
 
     createVehiculo(CreateVehiculoDto: CreateVehiculoDto) {
@@ -55,6 +66,20 @@ export class VehiculosService {
         this.autos.push(newAuto);
     
         fs.appendFileSync(this.url, dataAppend);
+      }
+
+
+      deleteVehiculo(patente: string): boolean {
+        const pos = this.autos.findIndex((e) => {
+          return e.patente == patente;
+        });
+    
+        if (pos != -1) {
+          this.autos.splice(pos, 1);
+          return true;
+        }
+    
+        return false;
       }
     }
 
