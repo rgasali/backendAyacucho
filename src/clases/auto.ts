@@ -20,4 +20,7 @@ export class Auto{
         this.anio=anio;
         this.precio=precio;
     }
-}
+
+    toString(){
+    return `${this.tipo},${this.marca},${this.patente},${this.modelo},${this.anio},${this.precio}`;
+    }}
