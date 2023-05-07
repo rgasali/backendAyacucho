@@ -23,4 +23,31 @@ export class Auto{
 
     toString(){
     return `${this.tipo},${this.marca},${this.patente},${this.modelo},${this.anio},${this.precio}`;
-    }}
+    }
+
+    setTipo(nuevoTipo: string): void {
+      this.tipo = nuevoTipo;
+    }
+
+    setMarca(nuevoMarca: string): void {
+        this.marca = nuevoMarca;
+    }
+
+    setPatente(nuevoPatente: string): void {
+      this.patente = nuevoPatente;
+    }
+
+    setModelo(nuevoModelo: string): void {
+      this.modelo = nuevoModelo;
+    }
+
+    setAnio(nuevoAnio: number): void {
+      this.anio = nuevoAnio;
+    }
+
+    setPrecio(nuevoPrecio: number): void {
+      this.precio = nuevoPrecio;
+    }
+
+
+}

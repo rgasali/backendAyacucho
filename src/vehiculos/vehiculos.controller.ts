@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { VehiculosService } from './vehiculos.service';
 import { Auto } from 'src/clases/auto';
 import { CreateVehiculoDto } from './vehiculos.dto';
@@ -26,6 +26,13 @@ postAuto(@Body() createVehiculoDto: CreateVehiculoDto) {
   return this.vehiculoService.createVehiculo(createVehiculoDto);
 
 }
+
+@Put(":patente")
+putAuto(@Body()auto: CreateVehiculoDto, @Param('patente') patente: string) :string {
+  return this.vehiculoService.updateAuto(auto, patente);
+}
+
+
 
 @Delete(":patente")
   deleteVehiculo(@Param("patente") patente: string): boolean {

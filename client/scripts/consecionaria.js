@@ -18,7 +18,22 @@ const mostrarVehiculos = () => {
       <td>${r.carga}</td>
       <td> <a href='http://localhost:3000/vehiculoDetail.html?index=${r.patente}' > Ver detalles </a> </td>
       <td> <button type="button" class="btnEliminar" id="${r.patente}">Eliminar</button></td>
+     
+    </tr>
+    <tr>
+      <td> <input type= "text" value= "${r.tipo}" id= "tipo${r.patente}"> </td>
+      <td> <input type= "text" value= "${r.marca}" id= "marca${r.patente}"> </td>
+      <td> <input type= "text" value= "${r.patente}" id= "patente${r.patente}"> </td>
+      <td> <input type= "text" value= "${r.modelo}" id= "modelo${r.patente}"> <tdp>
+      <td> <input type= "text" value= "${r.anio}" id= "anio${r.patente}"> </td>
+      <td> <input type= "text" value= "${r.precio}" id= "precio${r.patente}"> </td>
+      <td> <input type= "text" value= "${r.carga}" id= "carga${r.patente}"> </td> 
+      <td><button class="btnUpdAuto" id="${r.patente}">Actualizar</button></td>
+    </tr>  
+        
       </tr>
+
+
  `
   }
   contenedor.innerHTML = tabla;
@@ -35,6 +50,46 @@ const mostrarVehiculos = () => {
     load();
   }
 
+
+
+ let botonesActualizar = document.querySelectorAll('.btnUpdAuto');
+
+ botonesActualizar.forEach(boton => {
+  
+  boton.addEventListener('click',(e)=>{
+     btnActualizarClick(e)
+    
+  })
+ })
+/******************************************* */
+ async function btnActualizarClick(e) {
+
+  let patente = e.target.id;
+  console.log(patente);
+
+  let renglon = {
+    
+  "tipo": document.querySelector(`#tipo${patente}`).value,
+  "marca": document.querySelector(`#marca${patente}`).value,
+  "patente": document.querySelector(`#patente${patente}`).value,
+  "modelo": document.querySelector(`#modelo${patente}`).value,
+  "anio": Number(document.querySelector(`#anio${patente}`).value),
+  "precio": Number(document.querySelector(`#precio${patente}`).value),
+  /* "carga": Number(document.querySelector(`#carga${patente}`).value) */
+  }
+
+  let respuesta = await fetch(`/vehiculos/${patente}`, {
+           method :'PUT',
+           headers: { 'Content-Type' : 'application/json' },
+           body : JSON.stringify(renglon)
+    });
+
+    load();
+  }
+  /************************************* */
+
+
+
   let botonesBorrar = document.querySelectorAll('.btnEliminar'); 
 
   botonesBorrar.forEach(boton => {
@@ -46,6 +101,7 @@ const mostrarVehiculos = () => {
   })
 
 }
+
 
 
 async function load() {

@@ -69,6 +69,31 @@ export class VehiculosService {
       }
 
 
+      
+      updateAuto(nuevoAuto: any, patente: string): string{
+    
+        let index = this.autos.findIndex(auto => auto.patente == patente);
+    
+        if (index != -1) {
+          let autoExistente = this.autos[index];
+    
+          autoExistente.setTipo(nuevoAuto.tipo);
+          autoExistente.setMarca(nuevoAuto.marca);
+          autoExistente.setPatente(nuevoAuto.patente);
+          autoExistente.setModelo(nuevoAuto.modelo);
+          autoExistente.setAnio(nuevoAuto.anio);
+          autoExistente.setPrecio(nuevoAuto.precio);
+    
+          return "ok"
+        } else {
+          return "404"
+        }
+    
+      }
+
+
+
+
       deleteVehiculo(patente: string): boolean {
         const pos = this.autos.findIndex((e) => {
           return e.patente == patente;
